@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { Card, Button } from "react-bootstrap";
 import { HoverView } from "./Styles";
-import { BrowserRouter as Link } from "react-router-dom";
 
 const CourseCard = ({
   course: { id, title, thumbnail, instructor, description },
@@ -11,6 +10,7 @@ const CourseCard = ({
   return (
     <Card
       style={{ width: "18rem", border: "none", position: "relative" }}
+      onMouseEnter={() => setHover(true)}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -18,7 +18,6 @@ const CourseCard = ({
         <HoverView>
           <div className="hoverView">
             <h4>{title}</h4>
-
             <small>{instructor}</small>
             <p>{description}</p>
             <Button variant="danger" href={`/course/${id}`}>

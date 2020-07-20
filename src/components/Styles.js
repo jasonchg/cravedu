@@ -27,6 +27,7 @@ export const HoverView = styled.div`
   .hoverView {
     display: block;
     width: 250px;
+    height: auto;
     background: #eee;
     position: absolute;
     top: 0;
@@ -35,6 +36,7 @@ export const HoverView = styled.div`
     border-radius: 10%;
     box-shadow: 2px 2px 4px grey;
     font-size: 13px;
+    z-index: 99;
   }
 `;
 
@@ -48,5 +50,12 @@ export const BreadcrumbStyle = styled.div`
   }
   .breadcrumbs a {
     margin: 4px;
+  }
+`;
+
+export const AccordionStyle = styled.div`
+  .accordi {
+    display: block;
+    width: 100%;
   }
 `;

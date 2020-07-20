@@ -7,6 +7,7 @@ const initialState = {
     {
       id: "xas-sda-qqq",
       title: "I Love Coding",
+      price: "16.99",
       description:
         "This is a course that will teach u how to code,   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, odit tenetur quasi aperiam aut recusandae. ",
       instructor: "JCPro",
@@ -38,6 +39,7 @@ const initialState = {
     {
       id: "opa-qdr-zzs",
       title: "Network Basic",
+      price: "11.99",
       description: "This is a course that will teach u how to networking ",
       instructor: "JCPro",
       thumbnail:
@@ -73,6 +75,7 @@ const initialState = {
     {
       id: "opa-qdr-zzs",
       title: "Network Basic",
+      price: "11.99",
       description: "This is a course that will teach u how to networking ",
       instructor: "JCPro",
       thumbnail:
@@ -108,6 +111,7 @@ const initialState = {
     {
       id: "opa-qdr-zzs",
       title: "Network Basic",
+      price: "11.99",
       description: "This is a course that will teach u how to networking ",
       instructor: "JCPro",
       thumbnail:
