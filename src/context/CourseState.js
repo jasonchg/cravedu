@@ -3,14 +3,34 @@ import CourseReducer from "./CourseReducer";
 
 // Initial State
 const initialState = {
+  instructors: [
+    {
+      id: "jcpro",
+      name: "JCpro",
+      description: "Was a Php Expert but now a React Rooky",
+      date: "1/2/2020",
+      thumbnail:
+        "https://images.pexels.com/photos/716411/pexels-photo-716411.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    },
+    {
+      id: "kelvin",
+      name: "Kelvin Ohms",
+      description: "I Dont know what I used to teach before..",
+      date: "1/2/2019",
+      thumbnail:
+        "https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    },
+  ],
   courses: [
     {
       id: "xas-sda-qqq",
       title: "I Love Coding",
       price: "16.99",
+      date: "7/2020",
       description:
         "This is a course that will teach u how to code,   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, odit tenetur quasi aperiam aut recusandae. ",
-      instructor: "JCPro",
+      instructorId: "jcpro",
+
       thumbnail:
         "https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       lessons: [
@@ -40,8 +60,9 @@ const initialState = {
       id: "opa-qdr-zzs",
       title: "Network Basic",
       price: "11.99",
+      date: "7/2020",
       description: "This is a course that will teach u how to networking ",
-      instructor: "JCPro",
+      instructorId: "kelvin",
       thumbnail:
         "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       lessons: [
@@ -76,8 +97,9 @@ const initialState = {
       id: "opa-qdr-zzs",
       title: "Network Basic",
       price: "11.99",
+      date: "7/2020",
       description: "This is a course that will teach u how to networking ",
-      instructor: "JCPro",
+      instructorId: "kelvin",
       thumbnail:
         "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       lessons: [
@@ -112,8 +134,9 @@ const initialState = {
       id: "opa-qdr-zzs",
       title: "Network Basic",
       price: "11.99",
+      date: "7/2020",
       description: "This is a course that will teach u how to networking ",
-      instructor: "JCPro",
+      instructorId: "kelvin",
       thumbnail:
         "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       lessons: [
@@ -158,6 +181,7 @@ export const CourseProvider = ({ children }) => {
     <CourseContext.Provider
       value={{
         courses: state.courses,
+        instructors: state.instructors,
       }}
     >
       {children}

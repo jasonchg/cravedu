@@ -28,7 +28,7 @@ export const HoverView = styled.div`
     display: block;
     width: 250px;
     height: auto;
-    background: #eee;
+    background: #eaeaea;
     position: absolute;
     top: 0;
     right: 0;
@@ -57,5 +57,27 @@ export const AccordionStyle = styled.div`
   .accordi {
     display: block;
     width: 100%;
+  }
+`;
+
+export const FooterStyle = styled.div`
+  .footContainer {
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+    padding: 1em;
+    z-index: 99;
+    background: white;
+    display: block;
+    position: relative;
+  }
+  .footLink {
+    display: block;
+    width: 100%;
+  }
+  .myBrand img {
+    display: inline-block;
+    width: 180px;
+    margin: 2em;
   }
 `;

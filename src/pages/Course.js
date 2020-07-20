@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { CourseContext } from "../context/CourseState";
 import { useParams, Redirect } from "react-router-dom";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
 import { CourseStyle } from "./Styles";
 import BreadCrumbs from "../components/BreadCrumbs";
 import CourseContent from "../components/CourseContent";
 import Spacer from "../components/Spacer";
 
 const Course = () => {
-  const { courses } = useContext(CourseContext);
+  const { courses, instructors } = useContext(CourseContext);
   const { id } = useParams();
 
   const setCourse = courses.filter((course) => {
@@ -25,11 +25,19 @@ const Course = () => {
   const {
     title,
     description,
-    instructor,
+    instructorId,
     thumbnail,
     price,
     lessons,
+    date,
   } = selectedCourse;
+
+  const findInstructor = instructors.filter((instructor) => {
+    return instructor.id === instructorId;
+  });
+
+  const instructor = findInstructor[0];
+
   return (
     <>
       <CourseStyle>
@@ -40,7 +48,7 @@ const Course = () => {
                 <BreadCrumbs nowAt={title} category={"IT & Development"} />
                 <h1>{title}</h1>
                 <p>
-                  Created by <a>{instructor}</a>
+                  Created by <a>{instructor.name}</a> | Last Update {date}
                 </p>
                 <Button variant="outline-light">Wishlist</Button>{" "}
                 <Button variant="outline-light">Share</Button>
@@ -77,10 +85,39 @@ const Course = () => {
           <Row>
             <Col sm={8}>
               <Spacer />
-              <h4>Course Content</h4>
+              <h4>
+                Course Content{" "}
+                <small>
+                  <Badge variant="secondary">
+                    {lessons.length}{" "}
+                    {lessons.length > 1 ? "Lectures" : "Lecture"}{" "}
+                  </Badge>
+                </small>
+              </h4>
               {lessons.map((lesson) => {
                 return <CourseContent lesson={lesson} key={lesson.id} />;
               })}
+              <Spacer />
+              <div className="instructor">
+                <h4>I'm the Instructor</h4>
+                <Spacer />
+                <Container>
+                  <Row>
+                    <Col sm={4}>
+                      <img
+                        src={instructor.thumbnail}
+                        alt={instructor.thumbnail}
+                      />
+                    </Col>
+                    <Col sm={8}>
+                      <a>
+                        <strong>{instructor.name}</strong>
+                      </a>
+                      <p>{instructor.description}</p>
+                    </Col>
+                  </Row>
+                </Container>
+              </div>
             </Col>
           </Row>
         </Container>

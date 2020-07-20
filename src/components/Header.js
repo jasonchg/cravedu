@@ -7,12 +7,14 @@ import {
   Button,
   Container,
 } from "react-bootstrap";
-
+import Logo from "../assets/logo.png";
 const Header = () => {
   return (
     <Navbar bg="light">
       <Container>
-        <Navbar.Brand href="/">Cravedu</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img src={Logo} alt={Logo} style={{ width: 140 }} />
+        </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>

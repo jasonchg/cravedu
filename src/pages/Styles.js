@@ -17,14 +17,22 @@ export const CourseStyle = styled.div`
   }
   .courseStyleCard {
     box-shadow: 2px 2px 5px grey;
-    position: absolute !important;
-    top: 0;
-    right: 0;
+    position: fixed !important;
+    top: 30;
+    right: 60;
     color: #111;
-    z-index: 99;
+    z-index: 1;
     width: 22rem;
   }
   .courseCardImage {
     height: 276px;
+  }
+  .instructor img {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 `;

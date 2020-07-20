@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 
 // Components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // Context Provider
 import { CourseProvider } from "./context/CourseState";
@@ -25,6 +26,8 @@ function App() {
           <Route path="/course/:id" component={Course} />
           <Route path="/contact" component={Contact} />
         </Switch>
+
+        <Footer />
       </Router>
     </CourseProvider>
   );

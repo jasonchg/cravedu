@@ -2,6 +2,7 @@
   "name": "cravedu-react",
   "version": "0.1.0",
   "private": true,
+  "homepeange": "https://jasonchg.github.io/test/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
